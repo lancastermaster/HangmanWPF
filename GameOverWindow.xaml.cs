@@ -19,9 +19,29 @@ namespace HangmanWPF
     /// </summary>
     public partial class GameOverWindow : Window
     {
+        public MainWindow mainWindow;
+        public Helper helper;
+
         public GameOverWindow()
         {
             InitializeComponent();
+            //helper = mainWindow.GameHelper;
+        }
+
+        private void button_PlayAgain_Click(object sender, RoutedEventArgs e)
+        {
+            helper = mainWindow.GameHelper;
+
+            helper.GameData.HP = 10;
+            helper.GameData.Score = 0;
+            mainWindow.SetupGameWindow();
+            mainWindow.Show();
+            this.Hide();
+        }
+
+        private void button_ExitGame_Click(object sender, RoutedEventArgs e)
+        {
+            Environment.Exit(0);
         }
     }
 }

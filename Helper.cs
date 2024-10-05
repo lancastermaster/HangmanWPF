@@ -7,7 +7,7 @@ using System.IO;
 
 namespace HangmanWPF
 {
-    internal class Helper
+    public class Helper
     {
         public Data GameData;
         public static string WordListFile = "HangmanWordList.txt"; //E:\C# Projects - Programs\NewProjects\HangmanWPF\HangmanWordList.txt

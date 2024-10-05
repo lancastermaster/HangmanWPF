@@ -19,9 +19,18 @@ namespace HangmanWPF
     /// </summary>
     public partial class TitleWindow : Window
     {
+        public MainWindow mainWindow;
+
         public TitleWindow()
         {
             InitializeComponent();
+        }
+
+        private void button_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.SetupGameWindow();
+            mainWindow.Show();
+            this.Hide();
         }
     }
 }

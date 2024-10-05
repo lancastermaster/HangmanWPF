@@ -16,12 +16,22 @@ namespace HangmanWPF
     /// </summary>
     public partial class MainWindow : Window
     {
-        Helper GameHelper;
+        public Helper GameHelper;
+
+        public TitleWindow titleWindow = new TitleWindow();
+        public GameOverWindow gameOverWindow = new GameOverWindow();
         public MainWindow()
         {
             InitializeComponent();
             GameHelper = new Helper();
-            SetupGameWindow();
+            titleWindow.mainWindow = this;
+            gameOverWindow.mainWindow = this;
+            gameOverWindow.helper = GameHelper;
+            titleWindow.Show();
+            gameOverWindow.Hide();
+            this.Hide();
+
+            //SetupGameWindow();
         }
 
         public void SetupGameWindow()
@@ -115,6 +125,13 @@ namespace HangmanWPF
             }
 
             label_CurrentScore.Content = GameHelper.GameData.Score.ToString();
+
+            if (GameHelper.GameData.HP <= 0)
+            {
+                gameOverWindow.label_FinalScore.Content = GameHelper.GameData.Score;
+                gameOverWindow.Show();
+                this.Hide();
+            }
         }
     }
 }

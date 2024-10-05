@@ -8,7 +8,7 @@
         Title="TitleWindow" Height="450" Width="450">
     <Grid Background="Black">
         <Label x:Name="label" Content="Hangman" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="48" Margin="0,0,0,200"/>
-        <Button x:Name="button" Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,6,0,0" FontSize="24"/>
+        <Button x:Name="button" Content="Start Game" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,6,0,0" FontSize="24" Click="button_Click"/>
 
     </Grid>
 </Window>

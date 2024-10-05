@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace HangmanWPF
 {
 
-    internal class Data
+    public class Data
     {
         public int HP = 10; //default max is 10
         public int Score = 0;

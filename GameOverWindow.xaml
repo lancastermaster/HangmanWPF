@@ -10,8 +10,8 @@
         <Label x:Name="label" Content="Game Over" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="48"/>
         <Label x:Name="label_Score" Content="Final Score:" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="0,150,50,0"/>
         <Label x:Name="label_FinalScore" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="150,150,0,0"/>
-        <Button x:Name="button_PlayAgain" Content="Play Again" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,250,0,0"/>
-        <Button x:Name="button_ExitGame" Content="Exit Game" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,350,0,0"/>
+        <Button x:Name="button_PlayAgain" Content="Play Again" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,250,0,0" Click="button_PlayAgain_Click"/>
+        <Button x:Name="button_ExitGame" Content="Exit Game" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,350,0,0" Click="button_ExitGame_Click"/>
 
     </Grid>
 </Window>
