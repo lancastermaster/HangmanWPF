@@ -7,9 +7,11 @@
         mc:Ignorable="d"
         Title="GameOverWindow" Height="450" Width="450">
     <Grid Background="Black">
-        <Label x:Name="label" Content="Game Over" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="48"/>
-        <Label x:Name="label_Score" Content="Final Score:" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="0,150,50,0"/>
+        <Label x:Name="label" Content="Game Over" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="48" Margin="0,0,0,200"/>
+        <Label x:Name="label_HighScore" Content="High Score:" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="0,0,50,100"/>
+        <Label x:Name="label_Score" Content="Your Score:" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="0,150,50,0"/>
         <Label x:Name="label_FinalScore" Content="X" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontSize="24" Margin="150,150,0,0"/>
+        <Label x:Name="label_HighScoreNumber" Content="X" ContentStringFormat="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White" FontSize="24" Margin="288,146,0,0" Width="100" Height="125"/>
         <Button x:Name="button_PlayAgain" Content="Play Again" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,250,0,0" Click="button_PlayAgain_Click"/>
         <Button x:Name="button_ExitGame" Content="Exit Game" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="24" Margin="0,350,0,0" Click="button_ExitGame_Click"/>
 

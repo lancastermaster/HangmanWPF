@@ -15,5 +15,6 @@ namespace HangmanWPF
         public List<char>? TargetWordLetters = new List<char>();
         public List<char>? LettersUsed = new List<char>();
         public List<string> WordList = new List<string>();
+        public List<int> HighScores = new List<int>();
     }
 }

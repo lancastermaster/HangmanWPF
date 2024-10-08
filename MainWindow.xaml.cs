@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Linq;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -47,6 +48,8 @@ namespace HangmanWPF
             string WordToShow = "";
 
             List<char> chars = GameHelper.GameData.TargetWordLetters;
+
+            label_WordToGuess.Content = String.Empty;
 
             foreach (Char c in chars) 
             {
@@ -129,6 +132,43 @@ namespace HangmanWPF
             if (GameHelper.GameData.HP <= 0)
             {
                 gameOverWindow.label_FinalScore.Content = GameHelper.GameData.Score;
+                GameHelper.UpdateHighScores(GameHelper.GameData.Score);
+
+
+                if (GameHelper.GameData.HighScores.Count < 1)
+                {
+                    gameOverWindow.label_HighScoreNumber.Content = "0";
+                }
+                else if (GameHelper.GameData.HighScores.Count > 0 && GameHelper.GameData.HighScores.Count < 4)
+                {
+                    switch (GameHelper.GameData.HighScores.Count)
+                    {
+                        case 1:
+                            gameOverWindow.label_HighScoreNumber.Content = GameHelper.GameData.HighScores[0].ToString(); ;
+                            break;
+
+                        case 2:
+                            gameOverWindow.label_HighScoreNumber.Content =
+                                GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 1].ToString()
+                        + "\n" + GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 2].ToString();
+                            break;
+
+                        case 3:
+                            gameOverWindow.label_HighScoreNumber.Content =
+                            GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 1].ToString()
+                        + "\n" + GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 2].ToString()
+                        + "\n" + GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 3].ToString();
+                            break;
+                    }
+                }
+                else 
+                {
+                    gameOverWindow.label_HighScoreNumber.Content =
+                            GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 1].ToString()
+                        + "\n" + GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 2].ToString()
+                        + "\n" + GameHelper.GameData.HighScores[GameHelper.GameData.HighScores.Count - 3].ToString();
+                }
+
                 gameOverWindow.Show();
                 this.Hide();
             }
